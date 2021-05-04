@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS ch_test_db;
+
 CREATE TABLE IF NOT EXISTS ch_test_db.first_clicks
 (
     id                UUID,

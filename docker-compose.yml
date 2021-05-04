@@ -2,7 +2,8 @@ version: '3'
 
 services:
   ch_server:
-    image: yandex/clickhouse-server
+    container_name: test_ch_server
+    image: yandex/clickhouse-server:21.3.9.83
     ports:
       - "8123:8123"
     volumes:
@@ -10,9 +11,14 @@ services:
       - ./ch_migrations:/var/lib/migrations
     networks:
       - ch_test_task
+    environment:
+      CLICKHOUSE_DB: ch_test_db
+      CLICKHOUSE_USER: ch_user
+      CLICKHOUSE_PASSWORD: 123456
 
   ch_client:
-    image: yandex/clickhouse-client
+    container_name: test_ch_client
+    image: yandex/clickhouse-client:21.3.9.83
     entrypoint:
       - /bin/sleep
     command:
