@@ -1,2 +1,2 @@
-To run project use `make up-project`
+To run project use `make up-project` <br />
 Full sql for inserts you can find [here](https://gist.github.com/MOPO3ULA/2537a7fa4cd4378139d37b45baaba416)
